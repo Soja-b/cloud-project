@@ -1,1 +1,302 @@
+/* ===============================
+   GLOBAL RESET
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ===============================
+   INDEX / LANDING PAGE
+================================ */
+.landing-body {
+  background: linear-gradient(120deg, #667eea, #764ba2);
+  min-height: 100vh;
+  color: white;
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 50px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links a {
+  margin-left: 25px;
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  max-width: 750px;
+  margin: 120px auto 0;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 46px;
+  margin-bottom: 18px;
+}
+
+.tagline {
+  font-size: 18px;
+  margin-bottom: 20px;
+  opacity: 0.95;
+}
+
+.description {
+  font-size: 15px;
+  opacity: 0.9;
+  margin-bottom: 35px;
+  line-height: 1.6;
+}
+
+/* ---------- HERO BUTTONS ---------- */
+.hero-buttons a {
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: 30px;
+  margin: 0 10px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  background: white;
+  color: #667eea;
+}
+
+.btn-primary:hover {
+  background: #e5e7eb;
+}
+
+.btn-secondary {
+  border: 2px solid white;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* ===============================
+   POST JOB PAGE
+================================ */
+
+.post-job-body {
+  background: linear-gradient(120deg, #667eea, #764ba2);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container */
+.job-container {
+  width: 420px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading */
+.job-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+/* Form spacing */
+.job-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* Labels */
+.job-container label {
+  font-weight: 600;
+  color: #444;
+}
+
+/* Inputs & Textarea */
+.job-container input,
+.job-container textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* Textarea */
+.job-container textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+/* Focus effect (NO SIZE CHANGE) */
+.job-container input:focus,
+.job-container textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 5px rgba(102, 126, 234, 0.4);
+}
+
+/* Button */
+.job-container button {
+  padding: 14px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.job-container button:hover {
+  background: #5a67d8;
+}
+
+/* ===============================
+   AUTH PAGES (LOGIN / REGISTER)
+================================ */
+
+.auth-body {
+  background: linear-gradient(120deg, #667eea, #764ba2);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ---------- AUTH CARD ---------- */
+.auth-card {
+  background: white;
+  width: 380px;
+  padding: 35px;
+  border-radius: 18px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+  text-align: center;
+  animation: fadeIn 0.8s ease;
+}
+
+.auth-card h2 {
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.auth-subtitle {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 30px;
+}
+
+/* ---------- FLOATING INPUTS ---------- */
+.input-group {
+  position: relative;
+  margin-bottom: 22px;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 14px 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+  outline: none;
+}
+
+.input-group label {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+  font-size: 14px;
+  pointer-events: none;
+  transition: 0.3s;
+  background: white;
+  padding: 0 6px;
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label {
+  top: -6px;
+  font-size: 12px;
+  color: #667eea;
+}
+
+/* ---------- AUTH BUTTON ---------- */
+.auth-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.auth-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* ---------- AUTH FOOTER ---------- */
+.auth-footer {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.auth-footer a {
+  color: #667eea;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ===============================
+   ANIMATIONS
+================================ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
