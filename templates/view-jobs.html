@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Jobs</title>
+</head>
+<body>
+
+<h2>Available Jobs</h2>
+
+{% if jobs %}
+    {% for job in jobs %}
+        <div style="border:1px solid #ccc; padding:10px; margin:10px;">
+            <h3>{{ job[1] }}</h3>
+            <p><b>Company:</b> {{ job[2] }}</p>
+            <p><b>Location:</b> {{ job[3] }}</p>
+            <p>{{ job[4] }}</p>
+            <a href="#">Apply Job</a>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>No jobs available</p>
+{% endif %}
+
+</body>
+</html>

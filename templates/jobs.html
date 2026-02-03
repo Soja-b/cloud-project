@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jobs | JobConnect</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="auth-body">
+
+  <div class="auth-card" style="width:700px;">
+    <h2>Welcome {{ session['name'] }} ({{ session['role'] }})</h2>
+
+    <div style="margin:15px 0;">
+      {% if session['role'] == 'provider' %}
+        <a href="{{ url_for('post_job') }}" class="btn-primary">Post Job</a>
+      {% endif %}
+      <a href="{{ url_for('logout') }}" class="btn-secondary">Logout</a>
+    </div>
+
+    <hr><br>
+
+    <!-- ✅ LOOP START -->
+    {% for job in jobs %}
+      <div style="border:1px solid #ddd; padding:15px; margin-bottom:12px; border-radius:8px;">
+
+        <h3>{{ job[1] }}</h3>
+        <p>{{ job[2] }}</p>
+
+        <p>
+          <b>Status:</b>
+          {% if job[3] == "Available" %}
+            <span style="color: green; font-weight: bold;">Available</span>
+          {% else %}
+            <span style="color: red; font-weight: bold;">Filled</span>
+          {% endif %}
+        </p>
+
+        {% if session['role'] != 'provider' and job[3] == "Available" %}
+          <a href="{{ url_for('apply', job_id=job[0]) }}" class="btn-primary">
+            Apply
+          </a>
+        {% endif %}
+
+      </div>
+    {% endfor %}
+    {% for job in jobs %}
+<div style="border:1px solid #ccc; padding:10px; margin:10px;">
+    <h3>{{ job[1] }}</h3>
+    <p>{{ job[2] }}</p>
+
+    {% if session.role == "seeker" %}
+        <a href="{{ url_for('apply', job_id=job[0]) }}">
+            <button>Apply Job</button>
+        </a>
+    {% endif %}
+</div>
+{% endfor %}
+    <!-- ✅ LOOP END -->
+
+    {% if jobs|length == 0 %}
+      <p>No jobs available.</p>
+    {% endif %}
+
+  </div>
+
+</body>
+</html>

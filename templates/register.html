@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register | JobConnect</title>
+
+  <!-- Flask-safe CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="auth-body">
+
+  <div class="auth-card">
+    <h2>Create Account ✨</h2>
+    <p class="auth-subtitle">
+      Join JobConnect and explore opportunities
+    </p>
+
+    <!-- ✅ FORM ID + AUTOCOMPLETE OFF -->
+    <form id="registerForm" method="post" autocomplete="off">
+
+      <div class="input-group">
+        <input type="text" name="name" required autocomplete="off">
+        <label>Full Name</label>
+      </div>
+
+      <div class="input-group">
+        <input type="email" name="email" required autocomplete="off">
+        <label>Email Address</label>
+      </div>
+
+      <div class="input-group">
+        <input type="password" name="password" required autocomplete="new-password">
+        <label>Password</label>
+      </div>
+        
+      <div class="input-group">
+        <select name="role" required>
+          <option value="" disabled selected></option>
+          <option value="student">Student</option>
+          <option value="freelancer">Freelancer</option>
+          <option value="provider">Job Provider</option>
+        </select>
+        <label>Select Role</label>
+      </div>
+
+      <button type="submit" class="auth-btn">
+        Create Account
+      </button>
+    </form>
+
+    <!-- ✅ RESET FORM ON PAGE LOAD -->
+    <script>
+      window.onload = function () {
+        document.getElementById("registerForm").reset();
+      };
+    </script>
+
+    <p class="auth-footer">
+      Already have an account?
+      <a href="{{ url_for('login') }}">Login here</a><br><br>
+      <a href="{{ url_for('index') }}">Home</a>
+    </p>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JobConnect | Part-Time Job Portal</title>
+
+  <!-- Flask-safe CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="landing-body">
+
+  <!-- ================= NAVBAR ================= -->
+  
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="hero">
+    <h1>Find Flexible Part-Time Jobs Easily</h1>
+
+    <p class="tagline">
+      Connecting <b>Students</b>, <b>Freelancers</b>, and
+      <b>Job Providers</b> on one platform.
+    </p>
+
+    <p class="description">
+      JobConnect helps students earn while studying, freelancers find short-term
+      gigs, and job providers hire skilled people quickly and securely.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="{{ url_for('register') }}" class="btn-primary">Register</a>
+      <a href="{{ url_for('login') }}" class="btn-secondary">Login</a>
+    </div>
+  </section>
+
+</body>
+</html>
